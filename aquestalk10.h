@@ -4,7 +4,7 @@
 #include <napi.h>
 
 #include "aquestalk10/common.h"
-#ifdef _WIN32 || _WIN64
+#if defined(_WIN32) || defined(_WIN64)
 #include "aquestalk10/win.h"
 #else
 #include "aquestalk10/linux.h"
