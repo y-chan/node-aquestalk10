@@ -4,7 +4,11 @@
 #include <napi.h>
 
 #include "aquestalk10/common.h"
+#ifdef _WIN32 || _WIN64
 #include "aquestalk10/win.h"
+#else
+#include "aquestalk10/linux.h"
+#endif
 
 class AquesTalk10Wrapper : public Napi::ObjectWrap<AquesTalk10Wrapper> {
 public:
