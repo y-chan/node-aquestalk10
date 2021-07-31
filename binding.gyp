@@ -44,8 +44,8 @@
               "aquestalk10/linux.cpp",
               "aquestalk10/linux.h"
             ],
-            "ccflags": [ "-fno-exceptions" ],
-            "ccflags_cc": [ "-fno-exceptions" ]
+            "cflags": [ "-fno-exceptions" ],
+            "cflags_cc": [ "-fno-exceptions" ]
           }
         ]
       ]
