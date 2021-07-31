@@ -4,8 +4,8 @@
 
 AquesTalk10::AquesTalk10(const std::string libraryPath)
 {
-    void *handle = dlopen(libraryPath.c_str(), RTLD_LAZY);
-    if (handle == NULL) {
+    void *handler = dlopen(libraryPath.c_str(), RTLD_LAZY);
+    if (handler == NULL) {
         throw "failed load library";
     }
 	void *AquesTalk_Synthe = dlsym(handler, "AquesTalk_Synthe");
