@@ -36,6 +36,15 @@
               "aquestalk10/linux.h"
             ]
           }
+        ],
+        [
+          "OS=='mac'",
+          {
+            "sources": [
+              "aquestalk10/linux.cpp",
+              "aquestalk10/linux.h"
+            ]
+          }
         ]
       ]
     }
