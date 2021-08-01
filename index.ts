@@ -98,13 +98,8 @@ export interface IAquesTalk10 {
 class AquesTalk10 implements IAquesTalk10 {
   private readonly addon: IAquesTalk10
   constructor(libraryPath: string) {
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-      this.addon = new addon(libraryPath)
-    } catch (e) {
-      console.log((e as Error).message)
-      throw null
-    }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+    this.addon = new addon(libraryPath)
   }
 
   /**
