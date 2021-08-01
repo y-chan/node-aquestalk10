@@ -4,27 +4,37 @@
 
 AquesTalk10::AquesTalk10(const std::string libraryPath)
 {
-    void *handler = dlopen(libraryPath.c_str(), RTLD_LAZY);
-    if (handler == NULL) {
+    void *handler;
+    try {
+        handler = dlopen(libraryPath.c_str(), RTLD_LAZY);
+        if (handler == nullptr) {
+            throw nullptr;
+        }
+    } catch(...) {
         throw "failed load library";
     }
-	void *AquesTalk_Synthe = dlsym(handler, "AquesTalk_Synthe");
-	void *AquesTalk_Synthe_Utf8 = dlsym(handler, "AquesTalk_Synthe_Utf8");
-	void *AquesTalk_Synthe_Utf16 = dlsym(handler, "AquesTalk_Synthe_Utf16");
-	void *AquesTalk_FreeWave = dlsym(handler, "AquesTalk_FreeWave");
-	void *AquesTalk_SetDevKey = dlsym(handler, "AquesTalk_SetDevKey");
-	void *AquesTalk_SetUsrKey = dlsym(handler, "AquesTalk_SetUsrKey");
-	if (
-		AquesTalk_Synthe == NULL ||
-		AquesTalk_Synthe_Utf8 == NULL ||
-		AquesTalk_Synthe_Utf16 == NULL ||
-		AquesTalk_FreeWave == NULL ||
-		AquesTalk_SetDevKey == NULL ||
-		AquesTalk_SetUsrKey == NULL
-	) {
-		throw "loading library is succeeded, but can't found needed functions";
-	}
-	m_handler = handler;
+
+    try {
+        void *AquesTalk_Synthe = dlsym(handler, "AquesTalk_Synthe");
+        void *AquesTalk_Synthe_Utf8 = dlsym(handler, "AquesTalk_Synthe_Utf8");
+        void *AquesTalk_Synthe_Utf16 = dlsym(handler, "AquesTalk_Synthe_Utf16");
+        void *AquesTalk_FreeWave = dlsym(handler, "AquesTalk_FreeWave");
+        void *AquesTalk_SetDevKey = dlsym(handler, "AquesTalk_SetDevKey");
+        void *AquesTalk_SetUsrKey = dlsym(handler, "AquesTalk_SetUsrKey");
+        if (
+            AquesTalk_Synthe == nullptr ||
+            AquesTalk_Synthe_Utf8 == nullptr ||
+            AquesTalk_Synthe_Utf16 == nullptr ||
+            AquesTalk_FreeWave == nullptr ||
+            AquesTalk_SetDevKey == nullptr ||
+            AquesTalk_SetUsrKey == nullptr
+        ) {
+            throw nullptr
+        }
+    } catch (...) {
+        throw "loading library is succeeded, but can't found needed functions";
+    }
+    m_handler = handler;
 }
 
 AquesTalk10::~AquesTalk10()
