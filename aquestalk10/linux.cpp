@@ -29,7 +29,7 @@ AquesTalk10::AquesTalk10(const std::string libraryPath)
             AquesTalk_SetDevKey == nullptr ||
             AquesTalk_SetUsrKey == nullptr
         ) {
-            throw nullptr
+            throw nullptr;
         }
     } catch (...) {
         throw "loading library is succeeded, but can't found needed functions";
