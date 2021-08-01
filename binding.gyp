@@ -44,8 +44,9 @@
               "aquestalk10/linux.cpp",
               "aquestalk10/linux.h"
             ],
-            "cflags": [ "-fno-exceptions" ],
-            "cflags_cc": [ "-fno-exceptions" ]
+            "xcode_settings": {
+              "GCC_ENABLE_CPP_EXCEPTIONS": "YES"
+            }
           }
         ]
       ]
