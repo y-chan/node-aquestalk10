@@ -52,13 +52,13 @@ AquesTalk10Wrapper::AquesTalk10Wrapper(const Napi::CallbackInfo& info)
     } catch (std::exception& err) {
         Napi::Error::New(info.Env(), err.what()).ThrowAsJavaScriptException();
     }
-};
+}
 
 AquesTalk10Wrapper::~AquesTalk10Wrapper()
 {
     delete m_aquestalk10;
     m_aquestalk10 = nullptr;
-};
+}
 
 AQTK_VOICE* AquesTalk10Wrapper::CreateVoiceParamsStructAndValidateArgs(const Napi::CallbackInfo& info)
 {
