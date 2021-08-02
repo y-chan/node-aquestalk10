@@ -38,10 +38,9 @@ Napi::Object AquesTalk10Wrapper::Init(Napi::Env env, Napi::Object exports)
     *constructor = Napi::Persistent(func);
     env.SetInstanceData(constructor);
 
-    exports.Set("Wrapper", func);
+    exports.Set("AquesTalk10Wrapper", func);
     return exports;
 }
-
 
 AquesTalk10Wrapper::AquesTalk10Wrapper(const Napi::CallbackInfo& info)
     : Napi::ObjectWrap<AquesTalk10Wrapper>(info)
