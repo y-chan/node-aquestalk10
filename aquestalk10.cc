@@ -46,9 +46,9 @@ Napi::Object AquesTalk10Wrapper::Init(Napi::Env env, Napi::Object exports)
 AquesTalk10Wrapper::AquesTalk10Wrapper(const Napi::CallbackInfo& info)
     : Napi::ObjectWrap<AquesTalk10Wrapper>(info)
 {
-    std::string libraryName = info[0].As<Napi::String>().Utf8Value();
+    std::string libraryPath = info[0].As<Napi::String>().Utf8Value();
     try {
-        m_aquestalk10 = new AquesTalk10(libraryName);
+        m_aquestalk10 = new AquesTalk10(libraryPath);
     } catch (std::exception& err) {
         Napi::Error::New(info.Env(), err.what()).ThrowAsJavaScriptException();
     }

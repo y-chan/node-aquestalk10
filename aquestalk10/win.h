@@ -9,7 +9,7 @@
 
 class AquesTalk10 {
 public:
-    AquesTalk10(const std::string libraryName);
+    AquesTalk10(const std::string libraryPath);
     ~AquesTalk10();
 
     unsigned char *AquesTalk_Synthe_Sjis(const AQTK_VOICE* pParam, const char* koe, int* pSize);
