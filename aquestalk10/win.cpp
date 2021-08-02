@@ -4,7 +4,7 @@ AquesTalk10::AquesTalk10(const std::string libraryPath)
 {
     HMODULE handler = LoadLibrary(libraryPath.c_str());
     if (handler == NULL) {
-        throw "failed load library";
+        throw std::exception("failed load library");
     }
 	FARPROC AquesTalk_Synthe = GetProcAddress(handler, "AquesTalk_Synthe");
 	FARPROC AquesTalk_Synthe_Utf8 = GetProcAddress(handler, "AquesTalk_Synthe_Utf8");
@@ -20,7 +20,7 @@ AquesTalk10::AquesTalk10(const std::string libraryPath)
 		AquesTalk_SetDevKey == NULL ||
 		AquesTalk_SetUsrKey == NULL
 	) {
-		throw "loading library is succeeded, but can't found needed functions";
+		throw std::exception("loading library is succeeded, but can't found needed functions");
 	}
 	m_handler = handler;
 }

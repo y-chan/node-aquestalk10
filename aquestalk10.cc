@@ -49,8 +49,8 @@ AquesTalk10Wrapper::AquesTalk10Wrapper(const Napi::CallbackInfo& info)
     std::string libraryName = info[0].As<Napi::String>().Utf8Value();
     try {
         m_aquestalk10 = new AquesTalk10(libraryName);
-    } catch (const char* err) {
-        Napi::Error::New(info.Env(), err).ThrowAsJavaScriptException();
+    } catch (std::exception& err) {
+        Napi::Error::New(info.Env(), err.what()).ThrowAsJavaScriptException();
     }
 };
 
