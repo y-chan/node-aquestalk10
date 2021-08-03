@@ -2,13 +2,13 @@
 #define COMMON_H
 
 typedef struct _AQTK_VOICE_ {
-	int bas;
-	int spd;
-	int vol;
-	int pit;
-	int acc;
-	int lmd;
-	int fsc;
+    int bas;
+    int spd;
+    int vol;
+    int pit;
+    int acc;
+    int lmd;
+    int fsc;
 } AQTK_VOICE;
 
 typedef unsigned char* (*SYNTHE)(const AQTK_VOICE* pParam, const char* koe, int* pSize);
