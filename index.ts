@@ -106,7 +106,6 @@ class AquesTalk10 implements IAquesTalk10 {
    * Shift-JIS形式の音声記号列からWave形式の音声波形データを生成する関数。
    * また、Wave形式の音声データの先頭アドレス(ポインタ)も同時に返す。
    * エラー発生時はエラーを投げるので、try-catchでのエラーハンドリングを推奨。
-   * @module aquestalk10
    * @param {VoiceParams} vParams - 声質パラメータ
    * @param {string} koe - 音声記号列(Shift-JIS)
    * @return {Buffer} - Waveのバイナリ(Buffer)を返す。
@@ -119,7 +118,6 @@ class AquesTalk10 implements IAquesTalk10 {
    * UTF-8形式の音声記号列からWave形式の音声波形データを生成する関数。
    * また、Wave形式の音声データの先頭アドレス(ポインタ)も同時に返す。
    * エラー発生時はエラーを投げるので、try-catchでのエラーハンドリングを推奨。
-   * @module aquestalk10
    * @param {VoiceParams} vParams - 声質パラメータ
    * @param {string} koe - 音声記号列(UTF-8 BOM無し)
    * @return {Buffer} - Waveのバイナリ(Buffer)を返す。
@@ -132,7 +130,6 @@ class AquesTalk10 implements IAquesTalk10 {
    * UTF-8形式の音声記号列からWave形式の音声波形データを生成する関数。
    * また、Wave形式の音声データの先頭アドレス(ポインタ)も同時に返す。
    * エラー発生時はエラーを投げるので、try-catchでのエラーハンドリングを推奨。
-   * @module aquestalk10
    * @param {VoiceParams} vParams - 声質パラメータ
    * @param {string} koe - 音声記号列(UTF-16 BOMの有無は問わない エンディアンは実行環境に従う)
    * @return {Buffer} - Waveのバイナリ(Buffer)を返す。
@@ -145,7 +142,6 @@ class AquesTalk10 implements IAquesTalk10 {
    * これにより評価版の制限がなくなる。
    * キーの解析を防ぐため不正なキーでもtrueを返す場合がある。このとき制限は解除されない。
    * なお、本来のAquesTalk10の仕様と違って結果が反転しているので注意(本来は正しければ0、正しくなければ1を返す)
-   * @module aquestalk10
    * @param {string} key - ライセンスキーを指定
    * @return {boolean} - ライセンスキーが正しければtrue、正しくなければfalseが返る
    */
@@ -158,7 +154,6 @@ class AquesTalk10 implements IAquesTalk10 {
    * 以降、合成音声データに含まれる透かしが、使用ライセンス無しから取得済みに変化する。
    * キーの解析を防ぐため不正なキーでもtrueを返す場合がある。このとき制限は解除されない。
    * なお、本来のAquesTalk10の仕様と違って結果が反転しているので注意(本来は正しければ0、正しくなければ1を返す)
-   * @module aquestalk10
    * @param {string} key - ライセンスキーを指定
    * @return {boolean} - ライセンスキーが正しければtrue、正しくなければfalseが返る
    */
