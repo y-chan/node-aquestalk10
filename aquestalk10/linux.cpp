@@ -6,7 +6,7 @@ AquesTalk10::AquesTalk10(const std::string libraryPath)
 {
     void *handler = dlopen(libraryPath.c_str(), RTLD_LAZY);
     if (handler == nullptr) {
-        throw std::exception("failed load library");
+        throw std::runtime_error("failed load library");
     }
     void *AquesTalk_Synthe = dlsym(handler, "AquesTalk_Synthe");
     void *AquesTalk_Synthe_Utf8 = dlsym(handler, "AquesTalk_Synthe_Utf8");
@@ -22,7 +22,7 @@ AquesTalk10::AquesTalk10(const std::string libraryPath)
         AquesTalk_SetDevKey == nullptr ||
         AquesTalk_SetUsrKey ==nullptr
     ) {
-        throw std::exception("loading library is succeeded, but can't found needed functions");
+        throw std::runtime_error("loading library is succeeded, but can't found needed functions");
     }
     m_handler = handler;
 }
