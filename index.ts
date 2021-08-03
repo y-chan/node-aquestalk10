@@ -95,8 +95,19 @@ export interface IAquesTalk10 {
   AquesTalkSetUsrKey(key: string): boolean
 }
 
+/**
+ * AquesTalk10の関数をまとめてラップしたクラス
+ */
 class AquesTalk10 implements IAquesTalk10 {
   private readonly addon: IAquesTalk10
+
+  /**
+   * AquesTalk10クラスの初期化
+   * AquesTalk10ライブラリはライセンスの関係上、使用者自身で用意する必要があるため、
+   * そのライブラリのパス(ファイル名まで含む)を指定する。
+   * 読み込みに失敗した場合、エラーを投げるので、try-catchでのエラーハンドリングを推奨。
+   * @param {string} libraryPath - ライブラリのパス
+   */
   constructor(libraryPath: string) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     this.addon = new addon(libraryPath)
