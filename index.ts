@@ -106,7 +106,7 @@ class AquesTalk10 implements IAquesTalk10 {
    * AquesTalk10ライブラリはライセンスの関係上、使用者自身で用意する必要があるため、
    * そのライブラリのパス(ファイル名まで含む)を指定する。
    * 読み込みに失敗した場合、エラーを投げるので、try-catchでのエラーハンドリングを推奨。
-   * @param {string} libraryPath - ライブラリのパス
+   * @param {string} libraryPath - ライブラリのパス(絶対パス推奨)
    */
   constructor(libraryPath: string) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
