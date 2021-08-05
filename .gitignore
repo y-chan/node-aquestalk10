@@ -9,3 +9,5 @@ yarn-error.log
 
 index.js
 index.d.ts
+
+*.tgz
